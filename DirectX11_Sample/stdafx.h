@@ -2,6 +2,7 @@
 
 #include "Types.h"
 #include "Values.h"
+#include "Struct.h"
 #include "stdafx.h"
 
 // STD
@@ -35,3 +36,5 @@ using namespace Microsoft::WRL;
 #else
 #pragma comment(lib, "DirectXTex.lib")
 #endif
+
+#define IS_OK(p)	assert(SUCCEEDED(p))
