@@ -23,9 +23,10 @@ private:
 private:
 	void CreateGeometry();
 	void CreateInputLayout();
-
 	void CreateVS();
 	void CreatePS();
+
+	void CreateSRV();
 
 	void LoadShaderFromFile(const wstring& path, const string& name, const string& version, ComPtr<ID3DBlob>& blob);
 
@@ -51,6 +52,10 @@ private:
 	// geometry
 	vector<Vertex> m_vertices;
 	ComPtr<ID3D11Buffer> m_vertexBuffer = nullptr;
+
+	vector<uint32> m_indices;
+	ComPtr<ID3D11Buffer> m_indexBuffer = nullptr;
+
 	ComPtr<ID3D11InputLayout> m_inputLayout = nullptr;
 
 	// vertex shader
@@ -60,5 +65,8 @@ private:
 	// pixel shader
 	ComPtr<ID3D11PixelShader> m_pixelShader = nullptr;
 	ComPtr<ID3DBlob> m_psBlob = nullptr;
+
+	// SRV(shader resource view)
+	ComPtr<ID3D11ShaderResourceView> m_shaderResourceView = nullptr;
 };
 

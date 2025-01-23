@@ -5,4 +5,5 @@ struct Vertex
 {
 	Vector3 position;
 	Color color;
+	Vector2 uv;
 };
